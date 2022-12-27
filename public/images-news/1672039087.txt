@@ -1,0 +1,9 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `question1labtest`(IN onumber INT, OUT oamount int)
+BEGIN
+
+	SELECT ord_amount
+    INTO oamount
+    FROM orders
+    WHERE ord_num = onumber;
+
+END
