@@ -7,10 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-@if (session('status'))
-                <h6 class="alert alert-success">{{ session('status') }}</h6>
-                @endif
-    <h3>View Updates and Delete</h3>
+    <h3>view my own updates</h3>
     <table class="table">
                         <thead>
                           <tr>
@@ -18,16 +15,17 @@
                             <th>Title</th>
                             <th>Description</th>
                             <th>Fix the link</th>
+                            <th>1</th>
                           </tr>
                         </thead>
                         <tbody>
                         <tr>
                 @foreach($values as $value)
-                <td>{{$value->image}}</td>
+                <td><img src="{{ asset('images-news/'.$value->image) }}" alt=""></td>
                 <td>{{$value->title}}</td>
                 <td>{{$value->image_text}}</td>
-                <td><img src="{{ asset('images-news/'.$value->image) }}" alt=""></td>
-                <td><a href="{{ url('edit/'.$value->id) }}" class="btn btn-danger btn-sm">Edit</a></td>
+                
+                <td><a href="{{ url('delete/'.$value->id) }}" class="btn btn-danger btn-sm">Delete</a></td>
             </tr>
             @endforeach
                         </tbody>

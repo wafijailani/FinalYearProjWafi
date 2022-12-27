@@ -61,5 +61,13 @@ Route::middleware([
 
 Route::get('/viewusers', [adminControl::class, 'viewUsers']);
 
-Route::get('/deleteuser/{id}',[adminControl::class,'destroy']);
+Route::get('/viewuserssuspend', [adminControl::class, 'viewUsersSuspend']);
+
+Route::get('/deleteuser/{id}',[adminControl::class,'suspend']);
+
+Route::get('/reactivate/{id}', [adminControl::class, 'reactivate']);
+
+Route::get('/viewposts', [adminControl::class, 'viewPosts']);
+
+Route::get('/delete/{id}', [adminControl::class, 'deletePosts']);
 

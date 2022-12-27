@@ -10,8 +10,7 @@
 @if (session('status'))
                 <h6 class="alert alert-success">{{ session('status') }}</h6>
                 @endif
-                <h1>View All Users<h1>
-
+    <h1>Suspended Users</h1>
 
     <table class="table">
                         <thead>
@@ -31,7 +30,7 @@
                 <td>{{$value->email}}</td>
                 <td>{{$value->phonenum}}</td>
                 <td>{{$value->district}}</td>
-                <td><a href="{{ url('deleteuser/'.$value->id) }}" class="btn btn-danger btn-sm">Suspend User</a></td>
+                <td><a href="{{ url('reactivate/'.$value->id) }}" class="btn btn-danger btn-sm"> Reactivate User</a></td>
             </tr>
             @endforeach
 </body>
