@@ -106,5 +106,15 @@ class Control extends Controller
         return redirect()->back()->with('status','Project Details Updated Seccessfully');
     }
 
+    public function emergencyContact()
+    {
+        return view('users.emergencycontacts');
+    }
+
+    public function guideList()
+    {
+        return view('users.guide');
+    }
+
 }
 

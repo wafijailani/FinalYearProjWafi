@@ -36,9 +36,9 @@ Route::get('/edit/{id}',[Control::class,'editUpdates']);
 
 Route::put('/editandupdate/{id}', [Control::class, 'Update']);
 
-Route::get('/test', function () {
-    return view('users.postupdatesv2');
-});
+Route::get('/emergency', [Control::class, 'emergencyContact']);
+
+Route::get('/guide', [Control::class, 'guideList']);
 
 Route::controller(Control::class)->group(function(){
     Route::get('/image-upload', 'index1')->name('image.form');
