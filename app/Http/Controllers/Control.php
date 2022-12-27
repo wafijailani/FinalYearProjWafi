@@ -21,7 +21,7 @@ class Control extends Controller
 
         if ($typeuser=='1')
         {
-            return view ("home");
+            return view ("admin.landingpage");
         }
 
         else

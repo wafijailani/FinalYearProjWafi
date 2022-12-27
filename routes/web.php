@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Control;
+use App\Http\Controllers\adminControl;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -55,3 +57,9 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+Route::get('/viewusers', [adminControl::class, 'viewUsers']);
+
+Route::get('/deleteuser/{id}',[adminControl::class,'destroy']);
+
