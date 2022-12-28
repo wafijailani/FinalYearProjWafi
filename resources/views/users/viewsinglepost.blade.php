@@ -54,7 +54,21 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-          </div>
+          <div class="row my-4">
+  <div class="col-lg-8 mx-auto">
+    <div class="card shadow">
+      <img src="{{$values->PictureLink}}" class="img-fluid card-img-top">
+      <div class="card-body p-5">
+        <hr>
+        <h3 class="fw-bold text-primary">{{ $values->Title }}</h3>
+        <p>{{ $values->News }}</p>
+      </div>
+      <div class="card-footer px-5 py-3 d-flex justify-content-end">
+        <a href="" class="btn btn-success rounded-pill me-2">Edit</a>
+      </div>
+    </div>
+  </div>
+</div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
@@ -72,3 +86,4 @@
   </body>
   </html>
 </x-app-layout>
+

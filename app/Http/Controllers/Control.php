@@ -116,5 +116,10 @@ class Control extends Controller
         return view('users.guide');
     }
 
+    public function viewSinglePost($id)
+    {
+    $values = DB::table('newscrapes')->where('id','=',$id)->first();
+    return view('users.viewsinglepost', compact (('values')));
+    }
 }
 

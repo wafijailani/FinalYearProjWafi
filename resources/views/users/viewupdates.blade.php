@@ -21,7 +21,6 @@
                         <tbody>
                         <tr>
                 @foreach($values as $value)
-                <td>{{$value->image}}</td>
                 <td>{{$value->title}}</td>
                 <td>{{$value->image_text}}</td>
                 <td><img src="{{ asset('images-news/'.$value->image) }}" alt=""></td>
@@ -32,14 +31,5 @@
                       </table>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
 

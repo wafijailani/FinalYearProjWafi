@@ -71,3 +71,5 @@ Route::get('/viewposts', [adminControl::class, 'viewPosts']);
 
 Route::get('/delete/{id}', [adminControl::class, 'deletePosts']);
 
+Route::get('/value/{id}',[Control::class,'viewSinglePost']);
+
