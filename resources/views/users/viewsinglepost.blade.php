@@ -64,7 +64,7 @@
         <p>{{ $values->News }}</p>
       </div>
       <div class="card-footer px-5 py-3 d-flex justify-content-end">
-        <a href="" class="btn btn-success rounded-pill me-2">Edit</a>
+        <a href="/viewnews" class="btn btn-success rounded-pill me-2">Back</a>
       </div>
     </div>
   </div>

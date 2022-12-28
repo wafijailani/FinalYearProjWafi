@@ -9,9 +9,11 @@ $result = $con->query("SELECT * FROM locations");
 $result2 = $con->query("SELECT * FROM locations");
 ?>
 
+<x-app-layout>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+@include("admin.admincss")
 <title>Google Maps Dynamic Marker Icons with Info Windows</title>
 <meta charset="utf-8">
 </head>
@@ -107,7 +109,7 @@ google.maps.event.addDomListener(window, 'load', initMap);
 
 <style type="text/css">
 #mapCanvas {
-    width: 50%;
+    width: 1500px;
     height: 650px;
     
 }
@@ -140,12 +142,77 @@ google.maps.event.addDomListener(window, 'load', initMap);
 </style>
 </head>
 <body>
-<h1>Map Visualisation with Different Colour</h1>
-<div id="mapContainer">
-    <div id="mapCanvas"></div>
-    <div id="mapLegend">
-  <h2>Legend</h2>
-</div>
-</div>
+<div class="container-scroller">
+        
+        <!-- partial:partials/_navbar.html -->
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+          <!-- partial:partials/_sidebar.html -->
+          <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/viewnews">
+                  <span class="menu-title">View News (Bernama)</span>
+                  <i class="mdi mdi-contacts menu-icon"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/viewupdates">
+                  <span class="menu-title">View Recent Updates</span>
+                  <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/postupdates">
+                  <span class="menu-title">Post New Updates</span>
+                  <i class="mdi mdi-chart-bar menu-icon"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/viewmap">
+                  <span class="menu-title">Water Level Data</span>
+                  <i class="mdi mdi-chart-bar menu-icon"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/emergency">
+                  <span class="menu-title">Emergency Contacts</span>
+                  <i class="mdi mdi-chart-bar menu-icon"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/guide">
+                  <span class="menu-title">To-do During Flood</span>
+                  <i class="mdi mdi-chart-bar menu-icon"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- partial -->
+          <div class="main-panel">
+            <div class="content-wrapper">
+            <h2>Visualised Water Level Data on Map</h2>
+                <div id="mapContainer">
+                    <div id="mapCanvas"></div>
+                    <div id="mapLegend">
+                <h2>Legend</h2>
+                </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+              <div class="container-fluid d-flex justify-content-between">
+                <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Developed by Abdul Wafi Bin Jailani @ Universiti Tenaga Nasional</span>
+              </div>
+            </footer>
+            <!-- partial -->
+          </div>
+          <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+      </div>
 </body>
+@include("admin.adminjs")
 </html>
+</x-app-layout>

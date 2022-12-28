@@ -54,6 +54,7 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
+          <h3>Bernama</h3>
   <div class="row g-4 mt-1">
   @forelse($values as $value)
   <div class="col-lg-3">
