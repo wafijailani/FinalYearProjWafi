@@ -73,7 +73,7 @@ class Control extends Controller
         $update->image_text = $request->input('image_text');
         $update->name = $newid;
         $update->save();
-        return redirect()->back()->with('status','File Added Successfully');
+        return redirect()->back()->with('status','Posted !');
     }
 
     public function viewUpdates()
@@ -91,7 +91,7 @@ class Control extends Controller
     public function deleteOwnUpdates($id)
     {
         $delete = DB::table('updates')->where('id', '=', $id)->delete();
-        return redirect()->back()->with('status','Post deleted successfully');
+        return redirect()->back()->with('status','Post Deleted Successfully');
     }
 
     public function editUpdates($id)

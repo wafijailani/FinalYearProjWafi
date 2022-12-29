@@ -149,45 +149,51 @@ google.maps.event.addDomListener(window, 'load', initMap);
         <div class="container-fluid page-body-wrapper">
           <!-- partial:partials/_sidebar.html -->
           <nav class="sidebar sidebar-offcanvas" id="sidebar">
-            <ul class="nav">
-              <li class="nav-item">
-                <a class="nav-link" href="/viewnews">
-                  <span class="menu-title">View News (Bernama)</span>
-                  <i class="mdi mdi-contacts menu-icon"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/viewupdates">
-                  <span class="menu-title">View Recent Updates</span>
-                  <i class="mdi mdi-format-list-bulleted menu-icon"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/postupdates">
-                  <span class="menu-title">Post New Updates</span>
-                  <i class="mdi mdi-chart-bar menu-icon"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/viewmap">
-                  <span class="menu-title">Water Level Data</span>
-                  <i class="mdi mdi-chart-bar menu-icon"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/emergency">
-                  <span class="menu-title">Emergency Contacts</span>
-                  <i class="mdi mdi-chart-bar menu-icon"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/guide">
-                  <span class="menu-title">To-do During Flood</span>
-                  <i class="mdi mdi-chart-bar menu-icon"></i>
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/viewnews">
+                <span class="menu-title">View News (Bernama)</span>
+                <i class="mdi mdi-contacts menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/viewupdates">
+                <span class="menu-title">View Recent Updates</span>
+                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/postupdates">
+                <span class="menu-title">Post New Updates</span>
+                <i class="mdi mdi-chart-bar menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/viewmap">
+                <span class="menu-title">Water Level Data</span>
+                <i class="mdi mdi-chart-bar menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/emergency">
+                <span class="menu-title">Emergency Contacts</span>
+                <i class="mdi mdi-chart-bar menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/guide">
+                <span class="menu-title">To-do During Flood</span>
+                <i class="mdi mdi-chart-bar menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/viewownupdates">
+                <span class="menu-title">View My Own Updates</span>
+                <i class="mdi mdi-chart-bar menu-icon"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
           <!-- partial -->
           <div class="main-panel">
             <div class="content-wrapper">

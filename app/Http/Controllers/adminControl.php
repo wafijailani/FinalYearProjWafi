@@ -27,7 +27,7 @@ class adminControl extends Controller
     $value = User::find($id);
     $value->status = 0;
     $value->update();
-    return redirect()->back()->with('status','User deleted successfully');
+    return redirect()->back()->with('status','User Suspended Successfully');
     }
 
     public function reactivate($id)
@@ -35,7 +35,7 @@ class adminControl extends Controller
     $value = User::find($id);
     $value->status = 1;
     $value->update();
-    return redirect()->back()->with('status','User deleted successfully');
+    return redirect()->back()->with('status','User Activated Successfully');
     }
 
     public function viewPosts()

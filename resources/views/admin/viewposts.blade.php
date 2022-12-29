@@ -70,7 +70,7 @@ table {
                           <td>{{$value->title}}</td>
                           <td>{{$value->image_text}}</td>
                           <td>{{$value->name}}</td>
-                          <td><a href="" class="btn btn-danger btn-sm">Delete Post</a></td>
+                          <td><a href="/delete/{{$value->id}}" class="btn btn-danger btn-sm">Delete Post</a></td>
                         </tr>
                           @endforeach
                       </tbody>

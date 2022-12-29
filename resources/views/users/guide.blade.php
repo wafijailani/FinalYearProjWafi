@@ -54,16 +54,35 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-          <h3>Turn off all utilities</h3>
-    <h3>Move valuable papers, furs, jewelery, clothing, and other
-        contents to upper floors or higher elevations.
-    </h3>
-    <h3>Fill bathtubs, sinks and jugs with clean water in case 
-        regular supplies are contaminated.
-    </h3>
-    <h3>Put together an emergency kit in case of flood</h3>
-    <h3>Stay tuned to local media, safely evacuate when required</h3>
-    <h3>Make sure your importants documents are with you </h3>
+          <div class= "row">
+<div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h2 class="card-title">To-do List Incase of Flood</h2>
+                    <p class="card-description"><u>Please use this to-do list as a reference to help you when the water is starting to rise in your area.</u></p>
+                    <blockquote class="blockquote">
+                      <p class="mb-0">Turn off all utilities.</p>
+                    </blockquote>
+                    <blockquote class="blockquote">
+                      <p class="mb-0">Move valuable papers, furs, jewelery, clothing, and other contents to upper floors or higher elevations.</p>
+                    </blockquote>
+                    <blockquote class="blockquote">
+                      <p class="mb-0">Fill bathtubs, sinks and jugs with clean water in case regular supplies are contaminated.</p>
+                    </blockquote>
+                    <blockquote class="blockquote">
+                      <p class="mb-0">Put together an emergency kit in case of flood.</p>
+                    </blockquote>
+                    <blockquote class="blockquote">
+                      <p class="mb-0">Stay tuned to local media, safely evacuate when required.</p>
+                    </blockquote>
+                    <blockquote class="blockquote">
+                      <p class="mb-0">Make sure your importants documents are with you and are all stored away in waterproof bags.</p>
+                    </blockquote>
+                    
+                  </div>
+                </div>
+              </div>
+              </div>
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
@@ -82,3 +101,5 @@
   </body>
   </html>
 </x-app-layout>
+
+
