@@ -3,6 +3,15 @@
 <html lang="en">
 <head>
 @include("admin.admincss")
+<style>
+td {
+  white-space: normal !important; 
+  word-wrap: break-word;  
+}
+table {
+  table-layout: fixed;
+}
+</style>
 </head>
 <body>
 
@@ -57,7 +66,7 @@
                       <tbody>
                         <tr>
                           @foreach($values as $value)
-                          <td><img style="width: 400px; height: 400px" class="rounded" src="{{ asset('images-news/'.$value->image) }}"></td>
+                          <td><img style="width: 400px; height: 300px"  class="rounded" src="{{ asset('images-news/'.$value->image) }}"></td>
                           <td>{{$value->title}}</td>
                           <td>{{$value->image_text}}</td>
                           <td>{{$value->name}}</td>

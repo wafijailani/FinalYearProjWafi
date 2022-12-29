@@ -88,6 +88,12 @@ class Control extends Controller
         return view('users.viewownupdates', compact (('values')));
     }
 
+    public function deleteOwnUpdates($id)
+    {
+        $delete = DB::table('updates')->where('id', '=', $id)->delete();
+        return redirect()->back()->with('status','Post deleted successfully');
+    }
+
     public function editUpdates($id)
     {
         $values = DB::table('updates')->where('id','=',$id)->first();
@@ -97,13 +103,23 @@ class Control extends Controller
     public function Update(Request $request, $id)
     {
         $values = Update::find($id);
-        $imageName = time().'.'.$request->image->extension();
-        $request->image->move(public_path('images-news'), $imageName);
-        $values->image = $request->input('image',$imageName);
-        $values->title = $request->input('title');
-        $values->image_text = $request->input('image_text');
-        $values->update();
-        return redirect()->back()->with('status','Project Details Updated Seccessfully');
+        if (is_null($request->image)) //no pic
+        {
+            $values->title = $request->input('title');
+            $values->image_text = $request->input('image_text');
+            $values->update();
+            return redirect()->back()->with('status','Post Updated Successfully');
+        }
+        else
+        {
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images-news'), $imageName);
+            $values->image = $request->input('image',$imageName);
+            $values->title = $request->input('title');
+            $values->image_text = $request->input('image_text');
+            $values->update();
+            return redirect()->back()->with('status','Post Updated Successfully');
+        }
     }
 
     public function emergencyContact()
@@ -121,5 +137,6 @@ class Control extends Controller
     $values = DB::table('newscrapes')->where('id','=',$id)->first();
     return view('users.viewsinglepost', compact (('values')));
     }
+
 }
 

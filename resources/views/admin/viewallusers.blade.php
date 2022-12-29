@@ -53,6 +53,7 @@
                           <th>District</th>
                           <th></th>
                           <th></th>
+                          <th></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -64,7 +65,6 @@
                           <td>{{$value->district}}</td>
                           <td><a href="" class="btn btn-warning btn-sm">Edit User</a></td>
                           <td><a href="{{ url('deleteuser/'.$value->id) }}" class="btn btn-danger btn-sm">Suspend User</a></td>
-
                         </tr>
                           @endforeach
                       </tbody>

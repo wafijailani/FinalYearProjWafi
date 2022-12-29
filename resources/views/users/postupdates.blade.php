@@ -66,15 +66,16 @@
                     <form method="POST" action="{{ url('/storeupdates') }}" enctype="multipart/form-data" class="forms-sample">
                     @csrf  
 					  <div>
-						<img id="output" src="" width="500" height="400">
-						<input name="image" type="file" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
+						<img id="output" src="" width="500" height="400" class="form-control">
+						<input name="image" type="file" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])" class="form-control">
 						</div>
 					  <div class ="form-group">
 						<textarea
 							id="text" 
 							cols="40" 
 							rows="2" 
-							name="title" 
+							name="title"
+              class="form-control" 
 							placeholder="Title of the content"></textarea>
 						</div>
 						<div class ="form-group">
@@ -83,10 +84,11 @@
 								cols="40" 
 								rows="4" 
 								name="image_text" 
+                class="form-control"
 								placeholder="Post news here ..."></textarea>
 							</div>
 					  <button type="reset" name="upload"class="btn btn-gradient-primary me-2">Reset</button>
-	
+            <button type="submit" name="upload"class="btn btn-gradient-primary me-2">Post</button>
 					</form>
                   </div>
                 </div>

@@ -42,6 +42,8 @@ Route::get('/emergency', [Control::class, 'emergencyContact']);
 
 Route::get('/guide', [Control::class, 'guideList']);
 
+Route::get('/deleteownpost/{id}',[Control::class,'deleteOwnUpdates']);
+
 Route::controller(Control::class)->group(function(){
     Route::get('/image-upload', 'index1')->name('image.form');
     Route::post('/upload-image', 'storeImage')->name('image.store');
@@ -72,4 +74,3 @@ Route::get('/viewposts', [adminControl::class, 'viewPosts']);
 Route::get('/delete/{id}', [adminControl::class, 'deletePosts']);
 
 Route::get('/value/{id}',[Control::class,'viewSinglePost']);
-
