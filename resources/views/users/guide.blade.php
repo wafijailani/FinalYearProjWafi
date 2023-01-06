@@ -88,7 +88,20 @@
                   </div>
                 </div>
               </div>
-              
+
+
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h2 class="card-title">Info Banjir - Video (in Malay)</h2>
+                    <blockquote class="blockquote">
+                    <iframe width="650" height="400" src="https://www.youtube.com/embed/2oVGCOb6DSM"></iframe> 
+                   </blockquote>
+                  </div>
+                </div>
+              </div>
+
+
               </div>
           </div>
           <!-- content-wrapper ends -->
