@@ -49,6 +49,12 @@
                 <i class="mdi mdi-chart-bar menu-icon"></i>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/viewownupdates">
+                <span class="menu-title">View My Own Updates</span>
+                <i class="mdi mdi-chart-bar menu-icon"></i>
+              </a>
+            </li>
           </ul>
         </nav>
         <!-- partial -->
@@ -82,6 +88,7 @@
                   </div>
                 </div>
               </div>
+              
               </div>
           </div>
           <!-- content-wrapper ends -->
