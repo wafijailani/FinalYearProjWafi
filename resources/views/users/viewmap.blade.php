@@ -34,7 +34,7 @@ function initMap() {
     var markers = [
         <?php if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
-                echo '["'.$row['name'].'", '.$row['latitude'].', '.$row['longitude'].', "'.$row['icon'].'", "'.$row['value'].'"],';
+                echo '["'.$row['name'].'", '.$row['latitude'].', '.$row['longitude'].', "'.$row['icon'].'", "'.$row['value'].'",  "'.$row['lastupdate'].'",  "'.$row['Current Status'].'"],';
             }
         }
         ?>
@@ -45,8 +45,10 @@ function initMap() {
         <?php if($result2->num_rows > 0){
             while($row = $result2->fetch_assoc()){ ?>
                 ['<div class="info_content">' +
-                '<h2><?php echo $row['name']; ?></h2>' +
-                '<p><?php echo $row['info']; ?></p>' +
+                '<h3><?php echo $row['name']; ?></h3>' +
+                '<p>Station ID : <?php echo $row['info']; ?></p>' +
+                '<p>Last Update : <?php echo $row['lastupdate']; ?> </p>' +
+                '<p>Current Status : <?php echo $row['Current Status']; ?> </p>' + 
                 '<p><?php echo $row['value']; ?> meters</p>' +'</div>'],
         <?php }
         }
@@ -81,7 +83,7 @@ function initMap() {
 
     // Set zoom level
     var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-        this.setZoom(11);
+        this.setZoom(10);
         google.maps.event.removeListener(boundsListener);
     });
 
@@ -197,13 +199,15 @@ google.maps.event.addDomListener(window, 'load', initMap);
           <!-- partial -->
           <div class="main-panel">
             <div class="content-wrapper">
-            <h2>Visualised Water Level Data on Map</h2>
+            <h3>Water Level Data</h3>
                 <div id="mapContainer">
                     <div id="mapCanvas"></div>
                     <div id="mapLegend">
-                <h2>Legend</h2>
+                <h4>Legend</h4>
                 </div>
                 </div>
+                <br>
+                <p><b>Updated every 5 minutes (Source : Department of Irrigation and Drainage Malaysia)</b></p>
             </div>
             <!-- content-wrapper ends -->
             <!-- partial:partials/_footer.html -->

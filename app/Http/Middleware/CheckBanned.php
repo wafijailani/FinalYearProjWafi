@@ -23,7 +23,7 @@ class CheckBanned
     
                 $request->session()->regenerateToken();
     
-                return redirect()->route('login')->with('error', 'Your Account is suspended, please contact Admin via email at admin@myflood.com.');
+                return redirect()->route('login')->with('error', 'Your Account is suspended, please contact Admin via email at admin.myflood@gmail.com.');
     
         }
     

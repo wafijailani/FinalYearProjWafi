@@ -43,7 +43,7 @@
               <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">View All Current Users</h4>
+                    <h4 class="card-title">View All Current Activated Users</h4>
                     <table class="table table-striped">
                       <thead>
                         <tr>
@@ -63,7 +63,6 @@
                           <td>{{$value->email}}</td>
                           <td>{{$value->phonenum}}</td>
                           <td>{{$value->district}}</td>
-                          <td><a href="" class="btn btn-warning btn-sm">Edit User</a></td>
                           <td><a href="{{ url('deleteuser/'.$value->id) }}" class="btn btn-danger btn-sm">Suspend User</a></td>
                         </tr>
                           @endforeach

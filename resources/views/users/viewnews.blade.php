@@ -76,11 +76,15 @@
         </div>
       </div>
 
-</div>
-@empty
-    <h2 class="text-center text-secondary p-4">No post found in the database!</h2>
-@endforelse
+      </div>
+      @empty
+          <h2 class="text-center text-secondary p-4">No post found in the database!</h2>
+      @endforelse
+          {{$values->links()}}
           </div>
+          
+          </div>
+          
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">

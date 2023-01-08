@@ -44,7 +44,7 @@
               <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">View All Current Users</h4>
+                    <h4 class="card-title">View Suspended Users</h4>
                     <table class="table table-striped">
                       <thead>
                         <tr>

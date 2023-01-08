@@ -80,9 +80,7 @@
             @forelse($values as $value)
             <div class="col-lg-3">
                 <div class="card shadow">
-                  <div class="zoom">
                     <img src="{{ asset('images-news/'.$value->image) }}" class="card-img-top img-fluid">
-                    </div>
                     <div class="card-body">
                     <p class="btn btn-success rounded-pill btn-sm">{{ $value->title }}</p>
                     <p class="text-primary">Posted By : {{$value->name}}</p>

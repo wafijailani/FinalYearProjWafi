@@ -71,8 +71,10 @@
                 @csrf
                 @method('PUT')
                         <div class="form-group mb-3">
-                            <label for="">Old Picture / Current Picture </label>
-                            <img src="{{ asset('images-news/'.$values->image) }}">
+    <label for="">New Picture</label>
+	<img id="output" src="" width="500" height="500" onerror="this.onerror=null;this.src='{{asset ('/logos/wafi2.png')}}';">
+	<input name="image" type="file" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
+  	
                         </div>
                         <div class ="form-group">
                         <label for="">Title</label>
@@ -95,18 +97,26 @@
 								placeholder="Post news here ...">{{$values->image_text}}</textarea>
 							</div>
 
-    <div>
-    <label for="">New Picture</label>
-	<img id="output" src="" width="500" height="500">
-	<input name="image" type="file" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
-  	</div>
+
   	<div>                    
-  		<button type="submit" name="upload">POST</button>
+    <button type="reset" name="upload"class="btn btn-gradient-primary me-2">Reset</button>
+    <button type="submit" name="upload"class="btn btn-gradient-primary me-2">Post</button>
   	</div>
   </form>
 </div>
 </div>
 </div>
+<div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                  <div class="form-group mb-3">
+                            <label for="">Old Picture / Current Picture </label>
+                            <img src="{{ asset('images-news/'.$values->image) }}">
+                        </div>
+
+                  </div>
+                </div>
+              </div>
 </div>
 
           </div>

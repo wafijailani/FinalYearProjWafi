@@ -32,7 +32,7 @@ class Control extends Controller
 
     public function viewNews()
     {
-    $values = DB::table('newscrapes')->get();
+    $values = DB::table('newscrapes')->paginate(10);
     return view('users.viewnews', compact (('values')));
     }
 

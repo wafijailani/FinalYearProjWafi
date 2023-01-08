@@ -20,15 +20,28 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="phonenum" value="{{ __('Phone Number') }}" />
+                <x-jet-label for="phonenum" value="{{ __('Phone Number (Start with +6)') }}" />
                 <x-jet-input id="phonenum" class="block mt-1 w-full" type="text" name="phonenum" :value="old('phonenum')" required />
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="district" value="{{ __('District') }}" />
-                <x-jet-input id="district" class="block mt-1 w-full" type="text" name="district" :value="old('district')" required />
+                <select name="district" id="district" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" type="text" name="district" :value="old('district')" required >
+                <option value="Gombak (WPKL)">Gombak (WPKL)</option>
+                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                <option value="Hulu Selangor">Hulu Selangor</option>
+                <option value="Sabak Bernam">Sabak Bernam</option>
+                <option value="Kuala Selangor">Kuala Selangor</option>
+                <option value="Gombak">Gombak</option>
+                <option value="Petaling">Petaling</option>
+                <option value="Klang">Klang</option>
+                <option value="Hulu Langat">Hulu Langat</option>
+                <option value="Sepang">Sepang</option>
+                <option value="Kuala Langat">Kuala Langat</option>
+                <option value="Klang">Klang</option>
+                </select>
             </div>
-
+            
             <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Password') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />

@@ -72,11 +72,15 @@
                     <form method="POST" action="{{ url('/storeupdates') }}" enctype="multipart/form-data" class="forms-sample">
                     @csrf  
 					  <div>
-						<img id="output" src="" width="500" height="400" class="form-control">
-						<input name="image" type="file" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])" class="form-control">
+						<img id="output" src="" width="400" height="300" onerror="this.onerror=null;this.src='{{asset ('/logos/wafi2.png')}}';">
+            <br>
+						<input name="image" type="file" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])"required>
+            <br>
 						</div>
+            <br>
 					  <div class ="form-group">
 						<textarea
+              required
 							id="text" 
 							cols="40" 
 							rows="2" 
@@ -86,7 +90,8 @@
 						</div>
 						<div class ="form-group">
 						<textarea
-								id="text"
+                required
+                id="text"
 								cols="40" 
 								rows="4" 
 								name="image_text" 
