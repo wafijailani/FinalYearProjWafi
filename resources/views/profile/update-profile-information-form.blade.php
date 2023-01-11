@@ -4,7 +4,7 @@
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Update your account\'s profile information and email address.') }}
+        {{ __('Update your account\'s phone number and current district.') }}
     </x-slot>
 
     <x-slot name="form">
@@ -65,14 +65,25 @@
             <x-jet-input-error for="phonenum" class="mt-2" />
         </div>
         <!-- Email -->
-        <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="district" value="{{ __('District - Please fill in according to the district below : ') }}" />
-            <x-jet-label value="{{ __('Kuala Lumpur, Hulu Selangor, Sabak Bernam, Kuala Selangor, Gombak, Petaling, Klang, Hulu Langat, Sepang, Kuala Langat, Klang') }}" />
-            <x-jet-input id="district" type="text" class="mt-1 block w-full" wire:model.defer="state.district" autocomplete="district" />
-            <x-jet-input-error for="district" class="mt-2" />
-        </div>
 
+
+    <div wire:model.defer="state.district" class="col-span-6 sm:col-span-4">
+    <x-jet-label for="district" value="{{ __('District') }}" />
+    <select name="district" class="px-3 py-2 block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+        
+        @foreach (\App\Models\District::all() as $district)
+            <option value="{{  $district->name }}"
+            @if ($district->name == Auth::user()->district)
+                selected="selected"                                   
+            @endif
+            >{{ $district->name }}</option>
+        @endforeach
+    </select>
+    <x-jet-input-error for="district" class="mt-2" />
+</div>                     
     </x-slot>
+    
+    
     <x-slot name="actions">
         <x-jet-action-message class="mr-3" on="saved">
             {{ __('Saved.') }}

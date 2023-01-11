@@ -25,19 +25,19 @@ table {
             <li class="nav-item">
               <a class="nav-link" href="/viewnews">
                 <span class="menu-title">View News (Bernama)</span>
-                <i class="mdi mdi-contacts menu-icon"></i>
+                <i class="mdi mdi-newspaper menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/viewupdates">
-                <span class="menu-title">View Recent Updates</span>
-                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                <span class="menu-title">View Posts from Users</span>
+                <i class="mdi mdi-comment-multiple-outline menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/postupdates">
-                <span class="menu-title">Post New Updates</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <span class="menu-title">Post New Update</span>
+                <i class="mdi mdi-comment-plus-outline menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
@@ -49,19 +49,19 @@ table {
             <li class="nav-item">
               <a class="nav-link" href="/emergency">
                 <span class="menu-title">Emergency Contacts</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <i class="mdi mdi-deskphone menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/guide">
                 <span class="menu-title">To-do During Flood</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <i class="mdi mdi-television-guide menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/viewownupdates">
-                <span class="menu-title">View My Own Updates</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <span class="menu-title">View My Own Posts</span>
+                <i class="mdi mdi-comment-account-outline menu-icon"></i>
               </a>
             </li>
           </ul>
@@ -93,8 +93,8 @@ table {
                           <td><img style="width: 400px; height: 300px"  class="rounded" src="{{ asset('images-news/'.$value->image) }}"></td>
                           <td>{{$value->title}}</td>
                           <td>{{$value->image_text}}</td>
-                          <td><a href="{{ url('edit/'.$value->id) }}" class="btn btn-danger btn-sm">Edit Post</a></td>
-                          <td><a href="{{ url('deleteownpost/'.$value->id) }}" class="btn btn-danger btn-sm">Delete Post</a></td>
+                          <td><a href="{{ url('edit/'.$value->id) }}" class="btn btn-outline-secondary btn-icon-text">Edit Post<i class="mdi mdi-file-check btn-icon-append"></i></a></td>
+                          <td><a href="{{ url('deleteownpost/'.$value->id) }}" class="btn btn-outline-danger btn-icon-text">Delete Post</a></td>
                         </tr>
                           @endforeach
                       </tbody>

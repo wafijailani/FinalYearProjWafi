@@ -15,20 +15,20 @@
           <ul class="nav">
             <li class="nav-item">
               <a class="nav-link" href="/viewusers">
-                <span class="menu-title">View Users</span>
+                <span class="menu-title">View Current Users</span>
                 <i class="mdi mdi-contacts menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/viewuserssuspend">
                 <span class="menu-title">View Suspended Users</span>
-                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                <i class="mdi mdi-contacts menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/viewposts">
-                <span class="menu-title">View Posts</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <span class="menu-title">View Users Posts</span>
+                <i class="mdi mdi-newspaper menu-icon"></i>
               </a>
             </li>
           </ul>
@@ -36,6 +36,25 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
+          <div class="col-md-6 d-flex align-items-stretch">
+                <div class="row">
+                  <div class="col-md-12 grid-margin">
+                    <div class="card">
+                      <div class="card-body">
+                      <div class="template-demo">
+                      <h2>Welcome to myFlood, Admin</h2>
+                      <h4 class="card-title">Features Available : </h4>
+                        </div>
+                      <ul class="list-star">
+                      <li>View all current activated users.</li>
+                      <li>Suspend and Reactivate users.</li>
+                      <li>View all user posts and delete it.</li>
+                    </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->

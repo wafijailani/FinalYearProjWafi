@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Newscrape;
 use App\Models\Update;
 
@@ -64,6 +65,7 @@ class Control extends Controller
 
     public function storeUpdates(Request $request)
     {
+        $request->validate(['image'=>'required|image']);
         $newid=Auth::user()->name;
         $update = new Update;
         $imageName = time().'.'.$request->image->extension();
@@ -78,7 +80,7 @@ class Control extends Controller
 
     public function viewUpdates()
     {
-        $values = DB::table('updates')->get();
+        $values = Update::orderBy('id', 'desc')->get();
         return view('users.viewupdates', compact (('values')));
     }
 
@@ -88,9 +90,10 @@ class Control extends Controller
         return view('users.viewownupdates', compact (('values')));
     }
 
-    public function deleteOwnUpdates($id)
+    public function deleteOwnUpdates(Update $id)
     {
-        $delete = DB::table('updates')->where('id', '=', $id)->delete();
+        unlink(public_path('images-news/'.$id->image));
+        $id->delete();
         return redirect()->back()->with('status','Post Deleted Successfully');
     }
 
@@ -100,26 +103,23 @@ class Control extends Controller
         return view('users.edit', compact('values'));
     }
 
-    public function Update(Request $request, $id)
+    public function Update(Request $request, Update $id)
     {
-        $values = Update::find($id);
-        if (is_null($request->image)) //no pic
-        {
-            $values->title = $request->input('title');
-            $values->image_text = $request->input('image_text');
-            $values->update();
-            return redirect()->back()->with('status','Post Updated Successfully');
+        $imageName = '';
+        if ($request->hasFile('file')) {
+          $imageName = time() . '.' . $request->file->extension();
+          $request->file->move(public_path('images-news'), $imageName);
+          if ($id->image) {
+            unlink(public_path('images-news/'.$id->image));
+          }
+        } else {
+          $imageName = $id->image;
         }
-        else
-        {
-            $imageName = time().'.'.$request->image->extension();
-            $request->image->move(public_path('images-news'), $imageName);
-            $values->image = $request->input('image',$imageName);
-            $values->title = $request->input('title');
-            $values->image_text = $request->input('image_text');
-            $values->update();
-            return redirect()->back()->with('status','Post Updated Successfully');
-        }
+    
+        $values = ['title' => $request->title, 'image_text' => $request->image_text,'image' => $imageName];
+    
+        $id->update($values);
+        return redirect()->back()->with('status','Post Updated Successfully');
     }
 
     public function emergencyContact()
@@ -139,4 +139,3 @@ class Control extends Controller
     }
 
 }
-

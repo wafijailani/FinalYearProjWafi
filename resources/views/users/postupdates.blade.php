@@ -17,19 +17,19 @@
             <li class="nav-item">
               <a class="nav-link" href="/viewnews">
                 <span class="menu-title">View News (Bernama)</span>
-                <i class="mdi mdi-contacts menu-icon"></i>
+                <i class="mdi mdi-newspaper menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/viewupdates">
-                <span class="menu-title">View Recent Updates</span>
-                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                <span class="menu-title">View Posts from Users</span>
+                <i class="mdi mdi-comment-multiple-outline menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/postupdates">
-                <span class="menu-title">Post New Updates</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <span class="menu-title">Post New Update</span>
+                <i class="mdi mdi-comment-plus-outline menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
@@ -41,19 +41,19 @@
             <li class="nav-item">
               <a class="nav-link" href="/emergency">
                 <span class="menu-title">Emergency Contacts</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <i class="mdi mdi-deskphone menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/guide">
                 <span class="menu-title">To-do During Flood</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <i class="mdi mdi-television-guide menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/viewownupdates">
-                <span class="menu-title">View My Own Updates</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <span class="menu-title">View My Own Posts</span>
+                <i class="mdi mdi-comment-account-outline menu-icon"></i>
               </a>
             </li>
           </ul>
@@ -68,7 +68,7 @@
               <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Post Updates</h4>
+                    <h5 class="card-title">Post New Update</h5>
                     <form method="POST" action="{{ url('/storeupdates') }}" enctype="multipart/form-data" class="forms-sample">
                     @csrf  
 					  <div>
@@ -98,8 +98,11 @@
                 class="form-control"
 								placeholder="Post news here ..."></textarea>
 							</div>
-					  <button type="reset" name="upload"class="btn btn-gradient-primary me-2">Reset</button>
-            <button type="submit" name="upload"class="btn btn-gradient-primary me-2">Post</button>
+					  <!-- <button type="reset" name="upload"class="btn btn-gradient-primary me-2">Reset</button>
+            <button type="submit" name="upload"class="btn btn-gradient-primary me-2">Post</button> -->
+            <button type="reset" class="btn btn-outline-warning btn-icon-text"><i class="mdi mdi-reload btn-icon-prepend"></i> Reset </button>
+            <button type="submit" class="btn btn-outline-primary btn-icon-text"><i class="mdi mdi-file-check btn-icon-prepend"></i> Post </button>
+
 					</form>
                   </div>
                 </div>

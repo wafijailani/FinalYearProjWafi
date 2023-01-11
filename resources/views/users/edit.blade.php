@@ -16,19 +16,19 @@
             <li class="nav-item">
               <a class="nav-link" href="/viewnews">
                 <span class="menu-title">View News (Bernama)</span>
-                <i class="mdi mdi-contacts menu-icon"></i>
+                <i class="mdi mdi-newspaper menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/viewupdates">
-                <span class="menu-title">View Recent Updates</span>
-                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                <span class="menu-title">View Posts from Users</span>
+                <i class="mdi mdi-comment-multiple-outline menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/postupdates">
-                <span class="menu-title">Post New Updates</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <span class="menu-title">Post New Update</span>
+                <i class="mdi mdi-comment-plus-outline menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
@@ -40,19 +40,19 @@
             <li class="nav-item">
               <a class="nav-link" href="/emergency">
                 <span class="menu-title">Emergency Contacts</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <i class="mdi mdi-deskphone menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/guide">
                 <span class="menu-title">To-do During Flood</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <i class="mdi mdi-television-guide menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/viewownupdates">
-                <span class="menu-title">View My Own Updates</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <span class="menu-title">View My Own Posts</span>
+                <i class="mdi mdi-comment-account-outline menu-icon"></i>
               </a>
             </li>
           </ul>
@@ -71,10 +71,12 @@
                 @csrf
                 @method('PUT')
                         <div class="form-group mb-3">
-    <label for="">New Picture</label>
-	<img id="output" src="" width="500" height="500" onerror="this.onerror=null;this.src='{{asset ('/logos/wafi2.png')}}';">
-	<input name="image" type="file" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
-  	
+                <h5 class="card-title">New Picture</h5>
+                <div>
+                <img id="output" src="" width="500" height="500" onerror="this.onerror=null;this.src='{{asset ('/logos/wafi2.png')}}';">
+                <br>
+                <input name="file" type="file" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
+                </div>	
                         </div>
                         <div class ="form-group">
                         <label for="">Title</label>
@@ -99,8 +101,8 @@
 
 
   	<div>                    
-    <button type="reset" name="upload"class="btn btn-gradient-primary me-2">Reset</button>
-    <button type="submit" name="upload"class="btn btn-gradient-primary me-2">Post</button>
+    <button type="reset" class="btn btn-outline-warning btn-icon-text"><i class="mdi mdi-reload btn-icon-prepend"></i> Reset </button>
+    <button type="submit" class="btn btn-outline-primary btn-icon-text"><i class="mdi mdi-file-check btn-icon-prepend"></i> Post </button>
   	</div>
   </form>
 </div>
@@ -110,10 +112,9 @@
                 <div class="card">
                   <div class="card-body">
                   <div class="form-group mb-3">
-                            <label for="">Old Picture / Current Picture </label>
+                            <h5 class="card-title">Current Picture Stored in Post</h5>
                             <img src="{{ asset('images-news/'.$values->image) }}">
                         </div>
-
                   </div>
                 </div>
               </div>

@@ -24,20 +24,20 @@ table {
           <ul class="nav">
             <li class="nav-item">
               <a class="nav-link" href="/viewusers">
-                <span class="menu-title">View Users</span>
+                <span class="menu-title">View Current Users</span>
                 <i class="mdi mdi-contacts menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/viewuserssuspend">
                 <span class="menu-title">View Suspended Users</span>
-                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                <i class="mdi mdi-contacts menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/viewposts">
-                <span class="menu-title">View Posts</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <span class="menu-title">View Users Posts</span>
+                <i class="mdi mdi-newspaper menu-icon"></i>
               </a>
             </li>
           </ul>

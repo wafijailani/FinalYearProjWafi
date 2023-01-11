@@ -9,4 +9,6 @@ class Update extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $fillable = ['image', 'image_text', 'title', 'name'];
+
 }

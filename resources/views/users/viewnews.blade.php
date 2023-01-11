@@ -5,30 +5,33 @@
     @include("admin.admincss")
   </head>
   <body>
+    
     <div class="container-scroller">
-        
+
       <!-- partial:partials/_navbar.html -->
       <!-- partial -->
+      
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
+        
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item">
               <a class="nav-link" href="/viewnews">
                 <span class="menu-title">View News (Bernama)</span>
-                <i class="mdi mdi-contacts menu-icon"></i>
+                <i class="mdi mdi-newspaper menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/viewupdates">
-                <span class="menu-title">View Recent Updates</span>
-                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                <span class="menu-title">View Posts from Users</span>
+                <i class="mdi mdi-comment-multiple-outline menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/postupdates">
-                <span class="menu-title">Post New Updates</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <span class="menu-title">Post New Update</span>
+                <i class="mdi mdi-comment-plus-outline menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
@@ -40,19 +43,19 @@
             <li class="nav-item">
               <a class="nav-link" href="/emergency">
                 <span class="menu-title">Emergency Contacts</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <i class="mdi mdi-deskphone menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/guide">
                 <span class="menu-title">To-do During Flood</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <i class="mdi mdi-television-guide menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/viewownupdates">
-                <span class="menu-title">View My Own Updates</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <span class="menu-title">View My Own Posts</span>
+                <i class="mdi mdi-comment-account-outline menu-icon"></i>
               </a>
             </li>
           </ul>
@@ -60,7 +63,8 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-          <h3>Bernama</h3>
+          <h3>View Latest News</h3>
+          <p><b>Updated every 5 minutes (Source : Bernama)</b></p>
   <div class="row g-4 mt-1">
   @forelse($values as $value)
   <div class="col-lg-3">
