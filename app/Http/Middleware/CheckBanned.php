@@ -16,16 +16,16 @@ class CheckBanned
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->check() && (auth()->user()->status == 0)){
-                \Auth::logout();
+        // if(auth()->check() && (auth()->user()->status == 0)){
+        //         \Auth::logout();
 
-                $request->session()->invalidate();
+        //         $request->session()->invalidate();
     
-                $request->session()->regenerateToken();
+        //         $request->session()->regenerateToken();
     
-                return redirect()->route('login')->with('error', 'Your Account is suspended, please contact Admin via email at admin.myflood@gmail.com.');
+        //         return redirect()->route('login')->with('error', 'Your Account is suspended, please contact Admin via email at admin.myflood@gmail.com.');
     
-        }
+        // }
     
         return $next($request);
     }

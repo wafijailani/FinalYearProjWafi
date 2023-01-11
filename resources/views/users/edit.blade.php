@@ -60,6 +60,10 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
+          @if($errors->any())
+                <h6 class="alert alert-danger">{{$errors->first()}}</h6>
+                @endif
+
           @if (session('status'))
                 <h6 class="alert alert-success">{{ session('status') }}</h6>
                 @endif

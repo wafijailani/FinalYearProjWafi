@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Newscrape;
 use App\Models\Update;
-
+use Validator;
 
 class Control extends Controller
 {
@@ -65,6 +65,13 @@ class Control extends Controller
 
     public function storeUpdates(Request $request)
     {
+        if(Auth::user()->status==0)
+        {
+            return redirect()->back()->withErrors(['msg' => 'You have been suspended by the admin. Please contact admin via email at admin.myflood@gmail.com']);
+        }
+
+        else
+        {
         $request->validate(['image'=>'required|image']);
         $newid=Auth::user()->name;
         $update = new Update;
@@ -76,6 +83,7 @@ class Control extends Controller
         $update->name = $newid;
         $update->save();
         return redirect()->back()->with('status','Posted !');
+        }
     }
 
     public function viewUpdates()
@@ -105,8 +113,11 @@ class Control extends Controller
 
     public function Update(Request $request, Update $id)
     {
+        
+
         $imageName = '';
-        if ($request->hasFile('file')) {
+        if ($request->hasFile('file')) {  
+          $request->validate(['file'=>'required|image']);
           $imageName = time() . '.' . $request->file->extension();
           $request->file->move(public_path('images-news'), $imageName);
           if ($id->image) {
